@@ -1,0 +1,101 @@
+:root {
+  --main-nav-color: #212121;
+  --main-bg-color: #333333;
+  --active-tab-bg-color: #111111;
+  --text-color: #eeeeee;
+  --alt-text-color: #1de9b6;
+}
+
+body {
+  margin: 0;
+  color: var(--alt-text-color);
+  background-color: var(--main-bg-color);
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: var(--main-nav-color);
+  height: 100%;
+}
+
+
+/* a {
+  color: #00b7ff;
+} */
+
+nav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 85px;
+}
+
+nav > ul {
+  display: flex;
+}
+
+main {
+  height: 200vh;
+}
+
+.logo {
+  display: flex;
+  margin: 20px;
+  margin-right: 60px;
+  align-self: center;
+}
+
+.logo h1 {
+  font-size: 42px;
+  color: var(--text-color);
+}
+
+.logo .academy {
+  color: var(--alt-text-color);
+}
+
+.nav-item {
+  width: 150px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item.active {
+  background-color: var(--active-tab-bg-color);
+}
+
+.nav-item:hover {
+  background-color: var(--alt-text-color);
+}
+
+.nav-item h1{
+  font-size: 24px;
+  font-weight: 100;
+  color: var(--text-color);
+  margin-top: 5px;
+}
+
+
+
+@media (max-width: 1000px) {
+  .logo h1 {
+    font-size: 30px;
+  }
+  .nav-item {
+    width: 100px;
+  }
+  .nav-item h1 {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 670px) {
+
+}
