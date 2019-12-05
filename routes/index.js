@@ -10,7 +10,7 @@ router.get('/', (req, res, next)=> {
 
 router.get('/home', (req, res, next)=> {
   // res.render('index', { title: 'Express' });
-  res.sendFile(path.join(__dirname, '../html/home.html'))
+  res.status(200).sendFile(path.join(__dirname, '../html/home.html'))
 });
 
 module.exports = router;
