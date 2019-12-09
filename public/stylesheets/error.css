@@ -1,0 +1,8 @@
+.message, .status {
+    margin-left: 60px;
+}
+
+.status {
+    font-size: 100px;
+    margin-top: 90px;
+}

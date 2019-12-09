@@ -9,8 +9,26 @@ router.get('/', (req, res, next)=> {
 })
 
 router.get('/home', (req, res, next)=> {
-  // res.render('index', { title: 'Express' });
-  res.status(200).sendFile(path.join(__dirname, '../html/home.html'))
+  res.render('index', { 
+    home: 'active', 
+    projects: 'not-active', 
+    about: 'not-active' 
+});
 });
 
+router.get('/projects', (req, res, next)=> {
+  res.render('index', { 
+    home: 'not-active', 
+    projects: 'active', 
+    about: 'not-active' 
+  });
+});
+
+router.get('/about', (req, res, next)=> {
+  res.render('index', { 
+    home: 'not-active', 
+    projects: 'not-active', 
+    about: 'active' 
+  });
+});
 module.exports = router;
