@@ -1,11 +1,13 @@
 <template>
-  <li 
-    class="nav-item" 
-    v-bind:class="{ active: this.active }"
+  <router-link 
+    class="nav-item"
+    v-bind:to=this.name.toLowerCase() 
+    active-class="active" 
     v-on:mouseover="setActive(true)"
-    v-on:mouseout="setActive(false)">
+    v-on:mouseout="setActive(false)"
+  >
     {{ this.name }}
-  </li>
+  </router-link>
 </template>
 
 
@@ -20,7 +22,6 @@ export default {
   },
   data() {
     return {
-      name: this.name,
       active: false,
     }
   },
@@ -35,8 +36,19 @@ export default {
 
 <style lang="scss" scoped>
 @import './src/assets/stylesheets/theme.scss';
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  color: var(--text-color);
+}
 .active {
-  color: red;
+  color: var(--alt-text-color);
+  background-color: var(--active-tab-bg-color)
 }
 </style>

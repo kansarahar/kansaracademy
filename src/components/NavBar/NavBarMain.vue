@@ -1,15 +1,15 @@
 <template>
-  <nav>
+  <div id="navbar">
     <span id="logo">
-      <h1 id="kansar">Kansar</h1>
-      <h1 id="academy">Academy</h1>
+      <span id="kansar">Kansar</span>
+      <span id="academy">Academy</span>
     </span>
-    <ul>
+    <div id="nav-items">
       <NavBarItem name="Home"></NavBarItem>
       <NavBarItem name="About"></NavBarItem>
       <NavBarItem name="Projects"></NavBarItem>
-    </ul>
-  </nav>
+    </div>
+  </div>
 </template>
 
 
@@ -27,13 +27,25 @@ export default {
 <style lang="scss" scoped>
 @import './src/assets/stylesheets/theme.scss';
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-#logo {
-  font-family: 'Montserrat';
-  font-size: 32px;
-  background-color: var(--main-nav-color);
+#navbar {
+  --navbar-height: 60px;
+  --navbar-tab-width: 200px;
+  --navbar-logo-padding: 5px 35px 10px 15px;
+  --navbar-logo-fontsize: 42px;
+  --navbar-tab-fontsize: 20px;
+}
+#navbar {
   display: flex;
-  padding: 5px 0 10px 20px;
-  
+  align-items: center;
+  height: var(--navbar-height);
+  background-color: var(--main-nav-color);
+  font-family: 'Montserrat';
+}
+#logo {
+  display: flex;
+  align-items: center;
+  padding: var(--navbar-logo-padding);
+  font-size: var(--navbar-logo-fontsize);
 }
 #kansar {
   color: var(--text-color);
@@ -42,5 +54,11 @@ export default {
 #academy {
   color: var(--alt-text-color);
   margin: 0;
+}
+#nav-items {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  font-size: var(--navbar-tab-fontsize);
 }
 </style>
